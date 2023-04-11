@@ -1,0 +1,23 @@
+function rot13(str) {
+  let shifted="";
+  
+ for (let i = 0; i < str.length; i++) {
+     
+     if (str[i] === " " || str[i] === "!" || str[i] === "?" || str[i] === ".") { shifted += str[i] }
+     else if (str.charCodeAt(i) >= 32 && str.charCodeAt(i) <= 77) {
+         let converted = str.charCodeAt(i) + 13;
+        shifted += String.fromCharCode(converted);
+       
+         
+     } else if (str.charCodeAt(i) >= 77 && str.charCodeAt(i) <= 90) {
+             let converted = str.charCodeAt(i) - 13;
+         shifted += String.fromCharCode(converted);
+         
+         } 
+
+
+};
+return shifted;
+}
+
+rot13("SERR PBQR PNZC");
